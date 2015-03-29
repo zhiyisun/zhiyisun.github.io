@@ -7,9 +7,11 @@ title: About
 	Hey there! This is Zhiyi's Homepage. 
 </p>
 
+## Who am I, and what do I do?
+
 I'm [Zhiyi Sun](https://cn.linkedin.com/in/zhiyisun). I'm an engineer, previously at [LSI](http://www.lsi.com), [Turin Networks](https://www.linkedin.com/company/turin-networks), [ZTE](http://www.zte.com), currently at [Altera](http://www.altera.com). At [Turin Networks](https://www.linkedin.com/company/turin-networks) and [ZTE](http://www.zte.com), I was an embedded software engineer. At [LSI](http://www.lsi.com), I was System Application Engineer. At [Altera](http://www.altera.com), I am working on the software of [Altera's](http://www.altera.com) Dev Kits.
 
-## What hardware do you use?
+## What hardware do I use?
 
 I'm typing this on a [MacBook Pro (13-inch, Mid 2012)](https://support.apple.com/kb/SP649?locale=en_US). I use it at home. I upgraded it to 8GB memory. So it is enough for me to running Ubuntu inside of VirtualBox.
 
@@ -21,12 +23,16 @@ I also has a [Kindle 4](http://www.amazon.com/Kindle-eReader-eBook-Reader-e-Read
 
 ## And what software?
 
-* Browser[Chrome](http://www.google.com/chrome/) I used Firefox for many years. But its Android version has problem with Wechat. So I switch to Chrome.
+* Browser [Chrome](http://www.google.com/chrome/) I used Firefox for many years. But its Android version has problem with Wechat. So I switch to Chrome.
 * [OSX Yosemite](https://www.apple.com/osx/) But I think I can use any OS. I use OSX only because it is best fit for MacBook. I'm also compatible with Ubuntu. I used it for several years at home.
 * [Vagrant](http://vagrantup.com), an amazing tool for virtual OS.
-* [Virtual Box](http://virtualbox.org) of course.
-* [Vim](http://vim.org)
+* [Virtual Box](http://virtualbox.org), of course.
+* [Vim](http://vim.org) with [vundle](https://github.com/gmarik/Vundle.vim)
 * [Evernote](http://evernote.com)
+* [Skitch](https://evernote.com/skitch/)
+* [Pocket](https://getpocket.com/)
+* [有道词典](http://dict.youdao.com/)
+* [百度云](http://pan.baidu.com)
 * etc
 
 Thanks for reading!
