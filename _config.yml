@@ -11,14 +11,14 @@ relative_permalinks: true
 # Setup
 title:               Zhiyi's Blog
 tagline:             'Good things take time'
-description:         'I am Zhiyi Sun<a href="https://twitter.com/zhiyisun" target="_blank">(@zhiyisun)</a>. I like <a href="http://opensource.org/docs/definition.php" target="_blank">Open Source Software(OSS)</a>, especially Linux. I am also a big fan of electronics gadgets.'
+description:         'I am Zhiyi Sun<a href="https://google.com/+ZhiyiSun" target="_blank">(+zhiyisun)</a>. I like <a href="http://opensource.org/docs/definition.php" target="_blank">Open Source Software(OSS)</a>, especially Linux. I am also a big fan of electronics gadgets.'
 url:                 http://zhiyisun.github.io
 baseurl:             /
 paginate:            5
 
 # About/contact
 author:
-  name:              Zhiyi Sun 
+  name:              Zhiyi Sun
   url:               https://cn.linkedin.com/in/zhiyisun
   email:             zhiyisun@gmail.com
 
