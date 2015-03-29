@@ -4,27 +4,29 @@ title: About
 ---
 
 <p class="message">
-  Hey there! This page is included as an example. Feel free to customize it for your own use upon downloading. Carry on!
+	Hey there! This is Zhiyi's Homepage. 
 </p>
 
-In the novel, *The Strange Case of Dr. Jeykll and Mr. Hyde*, Mr. Poole is Dr. Jekyll's virtuous and loyal butler. Similarly, Poole is an upstanding and effective butler that helps you build Jekyll themes. It's made by [@mdo](https://twitter.com/mdo).
+I'm [Zhiyi Sun](https://cn.linkedin.com/in/zhiyisun). I'm an engineer, previously at [LSI](http://www.lsi.com), [Turin Networks](https://www.linkedin.com/company/turin-networks), [ZTE](http://www.zte.com), currently at [Altera](http://www.altera.com). At [Turin Networks](https://www.linkedin.com/company/turin-networks) and [ZTE](http://www.zte.com), I was an embedded software engineer. At [LSI](http://www.lsi.com), I was System Application Engineer. At [Altera](http://www.altera.com), I am working the software of [Altera's](http://www.altera.com) Dev Kits.
 
-There are currently two themes built on Poole:
+## What hardware do you use?
 
-* [Hyde](http://hyde.getpoole.com)
-* [Lanyon](http://lanyon.getpoole.com)
+I'm typing this on a [MacBook Pro (13-inch, Mid 2012)](https://support.apple.com/kb/SP649?locale=en_US). I use it at home. I upgraded it to 8GB memory. So it is enough for me to running Ubuntu inside of VirtualBox.
 
-Learn more and contribute on [GitHub](https://github.com/poole).
+My work laptop is a [Thinkpad T540p](http://shop.lenovo.com/us/en/laptops/thinkpad/t-series/t540p). It has 16GB memory. But due to the IT security software installed on it, it is slower than my own MacBook. I don't like its touchpad at all. It is far away behind MacBook. I also has a DELL 29" display.
 
-## Setup
+For a phone, I use [OnePlus one](http://oneplus.net/one) with [CM11S](http://cyanogenmod.org) installed as my primary smartphone.
 
-Some fun facts about the setup of this project include:
+I also has a [Kindle 4](http://www.amazon.com/Kindle-eReader-eBook-Reader-e-Reader-Special-Offers/dp/B0051QVESA).
 
-* Built for [Jekyll](http://jekyllrb.com)
-* Developed on GitHub and hosted for free on [GitHub Pages](https://pages.github.com)
-* Coded with [Sublime Text 2](http://sublimetext.com), an amazing code editor
-* Designed and developed while listening to music like [Blood Bros Trilogy](https://soundcloud.com/maddecent/sets/blood-bros-series)
+## And what software?
 
-Have questions or suggestions? Feel free to [open an issue on GitHub](https://github.com/poole/issues/new) or [ask me on Twitter](https://twitter.com/mdo).
+* Browser[Chrome](http://www.google.com/chrome/) I used Firefox for many years. But its Android version has problem with Wechat. So I switch to Chrome.
+* [OSX Yosemite](https://www.apple.com/osx/) But I think I can use any OS. I use OSX only because it is best fit for MacBook. I'm also compatible with Ubuntu. I used it for several years at home.
+* [Vagrant](http://vagrantup.com), an amazing tool for virtual OS.
+* [Virtual Box](http://virtualbox.org) of course.
+* [Vim](http://vim.org)
+* [Evernote](http://evernote.com)
+* etc
 
 Thanks for reading!
