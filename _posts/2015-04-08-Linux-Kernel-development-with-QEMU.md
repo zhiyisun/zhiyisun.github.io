@@ -24,6 +24,7 @@ Prerequisites
  - Linux source code
 	This could be download from git repository of kernel.org
  - Linaro GNU/Linux toolchain for ARM
+
     > apt-get install gcc-arm-linux-gnueabi
  - cpio, an utility to create the Linux filesystem image
     > apt-get install cpio
