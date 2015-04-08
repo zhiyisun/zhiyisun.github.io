@@ -2,6 +2,7 @@
 layout: post
 Linux kernel development with Qemu
 ---
+
 To study Linux kernel, I need to setup a development environment to run/debug modified kernel. Two VM solutions are considered. One is [KVM](http://www.linux-kvm.org/page/Main_Page). And another is [QEMU](http://wiki.qemu.org/Main_Page). 
 
 > [KVM](http://www.linux-kvm.org/page/Main_Page) (Kernel Virtual
