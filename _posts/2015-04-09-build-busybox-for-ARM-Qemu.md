@@ -6,14 +6,16 @@ title: Build busybox for ARM Qemu
     git clone git://busybox.net/busybox.git
  2. Configure busybox
     make menuconfig
-    Busybox Setting -> Build Options -> Build BusyBox as a static binary
-	Busybox Setting -> Build Options -> Cross Compiler Prefix  
+    Change below settings:
+	    Busybox Setting -> Build Options -> Build BusyBox as a static binary
+	    Busybox Setting -> Build Options -> Cross Compiler Prefix  
  3. make; make install
  4. Create necessary directory in rootfs
+     
      cd _install
      mkdir proc sys dev etc etc/init.d
      cat << EOF > etc/init.d/rcS
-         #!/bin/sh
+        #!/bin/sh
         mount -t proc none /proc
         mount -t sysfs none /sys
         /sbin/mdev -s
