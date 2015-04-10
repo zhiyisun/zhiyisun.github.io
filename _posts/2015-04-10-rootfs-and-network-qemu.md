@@ -46,7 +46,7 @@ After a few days struggling with rootfs, I tend to use the simplest way -- busyb
 
  - Boot Linux with initram image
 
-	    $ qemu-system-arm -M vexpress-a9 -kernel zImage -append "console=tty1 root=/dev/ram rdinit=/sbin/init" -initrd rootfs.img
+	    $ qemu-system-arm -M vexpress-a9 -kernel zImage -initrd rootfs.img -serial stdio -curses -append "console=tty1 root=/dev/ram rdinit=/sbin/init ip=dhcp" 
 
  - Boot Linux with NFS filesystem:
 
