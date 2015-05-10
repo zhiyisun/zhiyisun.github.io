@@ -1,33 +1,67 @@
 ---
 layout: post
-title : How to use gdb to debug ARM kernel in Qemu
+title : RootFS and Network of Qemu
 ---
-In host Linux shell, run below command to start gdb first.
+After a few days struggling with rootfs, I tend to use the simplest way -- busybox. I got some fails when compiling the buildroot source code.  For debugging network code, I think busybox is enough. I don't want to waste time on building a filesystem.
 
-    [zsun@ubuntu:~]↥ % gdb-multiarch ~/workspace/code/linux/vmlinux
-    GNU gdb (Ubuntu 7.8-1ubuntu4) 7.8.0.20141001-cvs
-    Copyright (C) 2014 Free Software Foundation, Inc.
-    License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
-    This is free software: you are free to change and redistribute it.
-    There is NO WARRANTY, to the extent permitted by law.  Type "show copying"
-    and "show warranty" for details.
-    This GDB was configured as "x86_64-linux-gnu".
-    Type "show configuration" for configuration details.
-    For bug reporting instructions, please see:
-    <http://www.gnu.org/software/gdb/bugs/>.
-    Find the GDB manual and other documentation resources online at:
-    <http://www.gnu.org/software/gdb/documentation/>.
-    For help, type "help".
-    Type "apropos word" to search for commands related to "word"...
-    Reading symbols from /home/zsun/workspace/code/linux/vmlinux...done.
-    (gdb) set architecture arm
-    The target architecture is assumed to be arm
-    (gdb) target remote localhost:1234
-    Remote debugging using localhost:1234
+ - Download BusyBox
+    BusyBox can be downloaded from its git server.
 
+	    $ git clone git://busybox.net/busybox.git
+	    $ git checkout remotes/origin/1_NN_stable
 
-Start Qemu. Please note that "-s" is used for debugging.
+ - Tune BusyBox Setting
 
-    qemu-system-arm -M vexpress-a9 -kernel zImage -append "console=tty1 root=/dev/nfs nfsroot=10.0.2.2:/busybox/_install rw ip=dhcp init=/sbin/init" -s
+	    $ make menuconfig
+	BusyBox Settings --> Build Options -> Build BusyBox as a static binary (no shared libs)  	
+	BusyBox Settings --> Build Options -> CrossCompiler prefix
+	Other settings, like networking ......
 
-Then you can debug your kernel.
+ - Build BusyBox
+
+		$ make install
+
+ - Update filesystem
+
+	    $ cd _install
+	    $ mkdir proc sys dev etc etc/init.d
+
+ - Create _install/etc/init.d/rcS
+
+	    #!/bin/sh
+	    mount -t proc none /proc
+	    mount -t sysfs none /sys
+	    /sbin/mdev -s
+
+ - Then set it as an executable file:
+
+	    $ chmod +x _install/etc/init.d/rcS
+
+ - Create image
+
+	    $ cd _install
+	    $ find . | cpio -o --format=newc > ../rootfs.img
+	    $ cd ..
+	    $ gzip -c rootfs.img > rootfs.img.gz
+
+ - Boot Linux with initram image
+
+	    $ qemu-system-arm -M vexpress-a9 -kernel zImage -initrd rootfs.img -serial stdio -curses -append "console=tty1 root=/dev/ram rdinit=/sbin/init ip=dhcp" 
+
+ - Boot Linux with NFS filesystem:
+
+	 - Install DHCP server
+
+		    $ sudo service nfs-kernel-server start
+
+	 - export folder in /etc/exports
+
+		    /busybox/_install 127.0.0.1(rw,sync,no_subtree_check,no_root_squash,insecure)
+
+	 - Restart NFS server
+
+		    $ sudo service nfs-kernel-server restart
+
+	 - Then boot Linux:
+
+		    $ qemu-system-arm -M vexpress-a9 -kernel zImage -append "console=tty1 root=/dev/nfs nfsroot=10.0.2.2:/busybox/_install rw ip=dhcp init=/sbin/init"
