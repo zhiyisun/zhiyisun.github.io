@@ -1,8 +1,6 @@
 ---
 layout: post
 title: Install Ubuntu 15.10 ARM64 inside of Qemu
-date:  2016-02-04 19:33:42 +0800
-categories: geek 
 ---
 In previous post, I described how to run ARM64 Linux inside Qemu. But that is stock Linux. In this post, I will describe how to install Ubuntu 15.10 for ARM64 platform inside Qemu. 
 
@@ -29,5 +27,7 @@ There are two types of Ubuntu can be installed in Qemu. The first is to use Ubun
     sudo umount /mnt
     sudo qemu-nbd -d /dev/nbd0
     sudo killall qemu-nbd``
+
  6. Now we have all we need to boot up ARM64 based Ubuntu inside Qemu! Let run it.
+
     `qemu-system-aarch64 -machine virt -cpu cortex-a57 -nographic -smp 8 -m 512 -kernel vmlinuz -initrd initrd.img --append "earlyprintk console=ttyAMA0 root=/dev/vda2 init=/sbin/init" -netdev user,id=eth0 -device virtio-net-device,netdev=eth0 -redir tcp:2222::22 -drive if=none,file=ubuntu.qcow2,id=hd0 -device virtio-blk-device,drive=hd0`
