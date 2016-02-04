@@ -9,7 +9,7 @@
 title: Zhiyi's Blog
 email: zhiyisun@gmail.com
 description: > # this means to ignore newlines until "baseurl:"
-        Great things take time.
+        I am Zhiyi Sun. I like Open Source Software(OSS), especially Linux. I am also a big fan of electronics gadgets. I listen 评弹 sometimes.
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "http://zhiyisun.github.io" # the base hostname & protocol for your site
 twitter_username: zhiyisun 
