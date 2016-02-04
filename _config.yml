@@ -9,7 +9,7 @@
 title: Zhiyi's Blog
 email: your-email@domain.com
 description: > # this means to ignore newlines until "baseurl:"
-I am Zhiyi Sun<a href="https://google.com/+ZhiyiSun" target="_blank">(+zhiyisun)</a>. I like <a href="http://opensource.org/docs/definition.php" target="_blank">Open Source Software(OSS)</a>, especially Linux. I am also a big fan of electronics gadgets. I listen <a href="http://en.wikipedia.org/wiki/Pingtan_(art_form)" target="_blank">评弹</a> sometimes.
+        I am Zhiyi Sun<a href="https://google.com/+ZhiyiSun" target="_blank">(+zhiyisun)</a>. I like <a href="http://opensource.org/docs/definition.php" target="_blank">Open Source Software(OSS)</a>, especially Linux. I am also a big fan of electronics gadgets. I listen <a href="http://en.wikipedia.org/wiki/Pingtan_(art_form)" target="_blank">评弹</a> sometimes.
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "http://zhiyisun.github.io" # the base hostname & protocol for your site
 twitter_username: zhiyisun 
