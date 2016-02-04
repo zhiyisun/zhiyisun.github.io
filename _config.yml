@@ -1,24 +1,19 @@
-# Dependencies
-gems:                [jekyll-paginate]
-
-# Permalinks
+# Welcome to Jekyll!
 #
-# Use of `relative_permalinks` ensures post links from the index work properly.
-permalink:           pretty
+# This config file is meant for settings that affect your whole blog, values
+# which you are expected to set up once and rarely need to edit after that.
+# For technical reasons, this file is *NOT* reloaded automatically when you use
+# 'jekyll serve'. If you change this file, please restart the server process.
 
-# Setup
-title:               Zhiyi's Blog
-tagline:             'Great things take time'
-description:         'I am Zhiyi Sun<a href="https://google.com/+ZhiyiSun" target="_blank">(+zhiyisun)</a>. I like <a href="http://opensource.org/docs/definition.php" target="_blank">Open Source Software(OSS)</a>, especially Linux. I am also a big fan of electronics gadgets. I listen <a href="http://en.wikipedia.org/wiki/Pingtan_(art_form)" target="_blank">评弹</a> sometimes.'
-url:                 http://zhiyisun.github.io
-baseurl:             /
-paginate:            5
+# Site settings
+title: Zhiyi's Blog
+email: your-email@domain.com
+description: > # this means to ignore newlines until "baseurl:"
+  'I am Zhiyi Sun<a href="https://google.com/+ZhiyiSun" target="_blank">(+zhiyisun)</a>. I like <a href="http://opensource.org/docs/definition.php" target="_blank">Open Source Software(OSS)</a>, especially Linux. I am also a big fan of electronics gadgets. I listen <a href="http://en.wikipedia.org/wiki/Pingtan_(art_form)" target="_blank">评弹</a> sometimes.'
+baseurl: "/" # the subpath of your site, e.g. /blog
+url: "http://zhiyisun.github.io" # the base hostname & protocol for your site
+twitter_username: zhiyisun 
+github_username: zhiyisun 
 
-# About/contact
-author:
-  name:              Zhiyi Sun
-  url:               https://cn.linkedin.com/in/zhiyisun
-  email:             zhiyisun@gmail.com
-
-# Custom vars
-version:             1.0.0
+# Build settings
+markdown: kramdown
