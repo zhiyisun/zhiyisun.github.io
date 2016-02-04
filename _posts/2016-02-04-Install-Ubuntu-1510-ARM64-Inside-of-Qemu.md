@@ -9,7 +9,7 @@ There are two types of Ubuntu can be installed in Qemu. The first is to use Ubun
  1. Download [kernel](http://ports.ubuntu.com/ubuntu-ports/dists/wily/main/installer-arm64/current/images/netboot/ubuntu-installer/arm64/linux) and [initrd](http://ports.ubuntu.com/ubuntu-ports/dists/wily/main/installer-arm64/current/images/netboot/ubuntu-installer/arm64/initrd.gz) from [Ubuntu web site](http://ports.ubuntu.com/). Please note that these two files are only used for boot and installation. After we installed Ubuntu on Hard Disk, we don't need them anymore.
  2. Create a qcow2 image as Hard Disk. I set the size as 10G. It should be enough for light use. 
 
-    qemu-img create -f qcow2 ubuntu.qcow2 10G
+    `qemu-img create -f qcow2 ubuntu.qcow2 10G`
 
  3. Boot qemu by using above kernel、initrd. The qcow2 is as the HD. It takes for a while. I recommend to read some articles like this [one](http://wiki.qemu.org/Documentation/Networking).
 
