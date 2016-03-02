@@ -109,7 +109,7 @@ enum perf_type_id {
 };
 ```
 
-**attr.config** could be picked from enum **perf_hw_id**, combination of **(perf_hw_cache_id | perf_hw_cache_op_id | perf_hw_cache_op_result_id)**, or raw hardware PMU event id, like 0x011. Please check the details in **include/uapi/linux/perf_event.h** in kernel.
+**attr.config** could be picked from enum **perf_hw_id**, combination of **(perf_hw_cache_id, perf_hw_cache_op_id, perf_hw_cache_op_result_id)**, or raw hardware PMU event id, like 0x011. Please check the details in **include/uapi/linux/perf_event.h** in kernel.
 
 
 
