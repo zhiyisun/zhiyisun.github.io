@@ -121,8 +121,8 @@ Based on the work from [Austin Seipp](https://www.blogger.com/profile/0800323513
 
 Reference
 
- 1. http://neocontra.blogspot.sg/2013/05/user-mode-performance-counters-for.html
- 2. http://stackoverflow.com/questions/30709432/how-to-get-cpu-performance-counter-for-a-piece-of-code
- 3. http://web.eece.maine.edu/~vweaver/projects/perf_events/perf_event_open.html
- 4. http://lists.infradead.org/pipermail/linux-arm-kernel/2014-November/299228.html
- 5. https://community.arm.com/groups/embedded/blog/2015/03/08/using-the-arm-performance-monitor-unit-pmu-linux-driver
+ 1. [http://neocontra.blogspot.sg/2013/05/user-mode-performance-counters-for.html](http://neocontra.blogspot.sg/2013/05/user-mode-performance-counters-for.html)
+ 2. [http://stackoverflow.com/questions/30709432/how-to-get-cpu-performance-counter-for-a-piece-of-code](http://stackoverflow.com/questions/30709432/how-to-get-cpu-performance-counter-for-a-piece-of-code)
+ 3. [http://web.eece.maine.edu/~vweaver/projects/perf_events/perf_event_open.html](http://web.eece.maine.edu/~vweaver/projects/perf_events/perf_event_open.html)
+ 4. [http://lists.infradead.org/pipermail/linux-arm-kernel/2014-November/299228.html](http://lists.infradead.org/pipermail/linux-arm-kernel/2014-November/299228.html)
+ 5. [https://community.arm.com/groups/embedded/blog/2015/03/08/using-the-arm-performance-monitor-unit-pmu-linux-driver](https://community.arm.com/groups/embedded/blog/2015/03/08/using-the-arm-performance-monitor-unit-pmu-linux-driver)
