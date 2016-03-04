@@ -3,10 +3,12 @@ layout: post
 title: Build busybox for ARM Qemu
 ---
  1. Download busybox
+
 ```
 git clone git://busybox.net/busybox.git
 ```
  2. Configure busybox
+
 ```
 make menuconfig
 ```
@@ -17,13 +19,15 @@ Change below settings:
 ```
 
  3. Build busybox
+
 ```
 make; make install
 ```
  4. Create necessary directory in rootfs
+
 ```
 cd _install
-mkdir proc sys dev etc etc/init.d
+mkdir -p proc sys dev etc etc/init.d
 cat << EOF > etc/init.d/rcS
   #!/bin/sh
   mount -t proc none /proc
