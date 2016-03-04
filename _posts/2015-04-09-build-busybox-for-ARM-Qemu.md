@@ -2,12 +2,12 @@
 layout: post
 title: Build busybox for ARM Qemu
 ---
- 1. Download busybox
+ - Download busybox
 
 ```
 git clone git://busybox.net/busybox.git
 ```
- 2. Configure busybox
+ - Configure busybox
 
 ```
 make menuconfig
@@ -18,12 +18,12 @@ Change below settings:
   Busybox Setting -> Build Options -> Cross Compiler Prefix 
 ```
 
- 3. Build busybox
+ - Build busybox
 
 ```
 make; make install
 ```
- 4. Create necessary directory in rootfs
+ - Create necessary directory in rootfs
 
 ```
 cd _install
@@ -38,7 +38,7 @@ chmod +x etc/init.d/rcS
 find . | cpio -o --format=newc > ../../busybox.img
 ```
 
- 5. Run Qemu
+ - Run Qemu
 
 ```
 qemu-system-arm -M vexpress-a9 -kernel zImage -initrd busybox.img -serial stdio -append "root=/dev/ram rdinit=/sbin/init console=ttyAMA0" -curses
