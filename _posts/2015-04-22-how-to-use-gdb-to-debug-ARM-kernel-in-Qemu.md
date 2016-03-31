@@ -26,8 +26,10 @@ In host Linux shell, run below command to start gdb first.
     Remote debugging using localhost:1234
 
 
-Start Qemu. Please note that "-s" is used for debugging.
+Start Qemu. Please note that "-s -S" is used for debugging.
+-s  Shorthand for -gdb tcp::1234, i.e. open a gdbserver on TCP port 1234.
+-S  Do not start CPU at startup (you must type 'c' in the monitor).
 
-    qemu-system-arm -M vexpress-a9 -kernel zImage -append "console=tty1 root=/dev/nfs nfsroot=10.0.2.2:/busybox/_install rw ip=dhcp init=/sbin/init" -s
+    qemu-system-arm -M vexpress-a9 -kernel zImage -append "console=tty1 root=/dev/nfs nfsroot=10.0.2.2:/busybox/_install rw ip=dhcp init=/sbin/init" -s -S
 
 Then you can debug your kernel.
