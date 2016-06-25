@@ -4,6 +4,7 @@ title: Get Cache Info in Linux on ARMv8 64-bit Platform
 ---
 
 On x86 platform, there are many ways to get cache information from a running Linux system. For example, by checking /proc/cpuinfo, or by using tools, like dmidecode, lshw, hwloc, etc. But don't forget "Everything is a file. From my opinion, the fundamental method to get whole picture of cache information is by checking sysfs. 
+
 ```
 grep . /sys/devices/system/cpu/cpu*/cache/index*/*
 ```
