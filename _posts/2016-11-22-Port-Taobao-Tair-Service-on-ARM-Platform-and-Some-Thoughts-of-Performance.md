@@ -2,8 +2,6 @@
 layout: post
 title: Port Taobao Tair Service on ARM Server and Some Thoughts on Performance
 ---
-Test
-
 
 Tair is a distributed key/value storage system developed by Taobao.com. It is an open source project since 2010. And it can be downloaded from [its website](http://tair.taobao.org/). It is not as popular as Redis/Memcached. But it is used by Taobao and some Chinese companies. 
 
