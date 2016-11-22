@@ -1,38 +1,40 @@
 ---
-layout: page
-title: About
+layout: post
+title: Port Taobao Tair Service on ARM Server and Some Thoughts on Performance
 ---
 
-<p class="message">
-	Hey there! This is Zhiyi's Homepage. 
-</p>
+Tair is a distributed key/value storage system developed by Taobao.com. It is an open source project since 2010. And it can be downloaded from [its website](http://tair.taobao.org/). It is not as popular as Redis/Memcached. But it is used by Taobao and some Chinese companies. 
 
-## Who am I, and what do I do?
+It provides four services: fdb, kdb, ldb and mdb. (In Tair's homepage, it also mentioned rdb. But we don't see it in source code which is opened to public.) fdb, kdb, ldb are persistent storage services. They are based on [firebird](http://firebirdsql.org/), [Kyoto Cabinet](http://fallabs.com/kyotocabinet/) and [Google's levelDB](https://github.com/google/leveldb). mdb is mdb is cache based solution. It is based on [memcached](https://memcached.org/). 
 
-I'm [Zhiyi Sun](https://cn.linkedin.com/in/zhiyisun). I live in Shanghai, China. I work at [Applied Micro Circuits](http://apm.com), previously at [Altera](http://www.altera.com), [LSI](http://www.lsi.com), [Turin Networks](https://www.linkedin.com/company/turin-networks), [ZTE](http://www.zte.com) as an software engineer. I am focusing on [ARMv8](http://www.arm.com/products/processors/armv8-architecture.php), [Linux Kernel](https://www.kernel.org/), networking, [Raspberry Pi 3B](https://www.raspberrypi.org/products/raspberry-pi-3-model-b/), etc.
+Basically, Tair system includes three components. Config server, Data Server and Client. 
 
-## What hardware do I use?
+![enter image description here](http://cdn1.infoqstatic.com/statics_s2_20161122-0331/resource/articles/taobao-tair/zh/resources/image1.JPG)
+(Source: [http://www.infoq.com/cn/articles/taobao-tair](http://www.infoq.com/cn/articles/taobao-tair))
 
-I'm typing this on a [MacBook Pro (Retina, 13-inch,Early 2015)](https://support.apple.com/kb/sp715?locale=en_US). This is my only laptop for both work and personal stuff. It is enough for me to running [Ubuntu](http://www.ubuntu.com/server) inside of [Vagrant](https://www.vagrantup.com/)/[VirtualBox](https://www.virtualbox.org/).
+**Porting:**
 
-For a phone, I use [XiaoMi Mi4c](http://www.mi.com/mi4c/) as my primary smartphone. The size is quite fit my pocket.
+For client, tair defines a set of RESTful interface. So user can write their own client code. It could be platform/language independent.
 
-I also has a [Kindle 4](http://www.amazon.com/Kindle-eReader-eBook-Reader-e-Reader-Special-Offers/dp/B0051QVESA). I bought it in 2011. I used it quite often when I took subway train to office or in the airport/train station.
+For Config and Data server, it is written mainly in C++. To make it run on ARM platform, it needs some porting effort. The most issue which blocks you to compile Tair on ARM platform is its inline x86 assembly code. Fortunately, those assembly are related to atomic operations. These function/code can be easily replaced by GNU builtin functions. Just like I contributed to [stress-ng](http://kernel.ubuntu.com/~cking/stress-ng/). 
 
-I bought a [Raspberry Pi 3B](https://www.raspberrypi.org/products/raspberry-pi-3-model-b/) this spring. I use it as an personal server on my desk.
+**Performance:**
 
-## And what software?
+Among server side components, most of workload are running on data server. So performance optimization work should focus on data server side. 
 
-* [Chrome](http://www.google.com/chrome/), I used Firefox for many years. But its Android version has problem with Wechat. So I switch to Chrome.
-* [OSX EL Capitan](https://www.apple.com/osx/) But I think I can use any OS. I use OSX only because it is best fit for MacBook. I'm comfortable with Ubuntu too. I used it for several years at home.
-* [Vagrant](http://vagrantup.com), an amazing tool for virtualization on my Macbook.
-* [Virtual Box](http://virtualbox.org), of course.
-* [Vim](http://vim.org) with [vundle](https://github.com/gmarik/Vundle.vim), I have a bunch of vim plugins. It is a very handy tool for coding without mouse.
-* [Evernote](http://evernote.com), good note app. But become biger and biger. Now it limits two devices for free user. I'm considering to switch to another note app.
-* [Skitch](https://evernote.com/skitch/), also from Evernote.
-* [Pocket](https://getpocket.com/), read it later.
-* [有道词典](http://dict.youdao.com/), Chinese <-> English
-* [百度云](http://pan.baidu.com), all my files are backup to this cloud.
-* etc
+More than 50% CPU are consumed by receiving requests from network and transmitting responses back to network. I saw same phenomenon on Redis and Memcached. It includes both kernel TCP/IP stack and user space code. For kernel space, NIC interrupt affinity and some TCP/IP parameters can be tuned to get better performance. 
 
-Thanks for reading!
+In user space, it depends on the architecture of Tair. For open source project, Tair uses tb-common-utils as the low level lib for rx/tx.  
+
+Here is some notes I made after reading Tair code.
+
+    When everything is initialised, transport::listen is listening on specific server interface IP and port. When new connection request is coming, it creates a new TCPComponent for this client in TCPAcceptor::handleReadEvent. And it will also add this socket to _socketEvent.  All further service requests/response will use this TCPComponent. In transport:eventLoop, it calls EPollSocketEvent::epoll_wait to wait all events registered to this epoll. Then calls iocomponent’s handleReadEvent/handleWriteEvent based on event type. iocomponent could be TCPAcceptor or TCPComponent. TCPAcceptor is used to received connection setup request from client. data_server will setup a new connection for this client’s service. This new connection is TCPComponent. TCPComponent’s handleReadEvent/handleWriteEvent functions will call TCPConnection’s readData/writeData functions. TCPConnection’s readData will call Connection::handlePacket and finally call tair_server::handlePacket or handleBatchPacket to push packets to related queues or handle the packet directly. For each queue(before these queues, all works are only in one thread, tair’s threads is for each queue), tair_server::handlePacketQueue is the function to process all packets based on packet type “pcode”. Then for example, GET/PUT operation are handled by request_processor::process. tair_manager’s put/get operation are called after that. 
+
+It has two thread modes. One is multiple thread mode. It uses one thread for rx. Then push these requests to a queue. Other threads are launched to retrieve requests from these queues and do get/put operation from related DB. Another mode is single thread mode. It receives requests from TCP socket and do get/put operation on DB.  
+
+To me, it doesn't make sense to use multiple threads architecture. Because, when using multiple threads mode, the bottleneck is the one thread which uses to RX/TX. And it also wastes CPU to switch between multiple threads. To get better performance, it would be better to use single thread mode and launch multiple instances on one server node. Just like we did in Redis.
+
+One thing that I notice is that in tbnet, it calls syscall to set TCP Quick ACK in each packet receive process!!! Based on my test, it consumes about 20% CPU for this syscall. TCP delayed acknowledgement is a kernel technology which combined the ACK, window update and the response data into one segment, to reduce protocol overhead. If there is no response from remote side, the ACK will be sent out after 500ms delay. To set TCP Quick ACK, Kernel TCP stack will send ACK after it get TCP packet immediately. For Tair application, each request from client side will have a response from data server side. So it makes TCP Quick ACK not so useful in this case. And TCP Quick ACK setting will be disabled automatically by kernel based on TCP stack status. So if you want to use it, you have to set it each time. That downgrade the performance a lot. For tair case, I would suggest to not set TCP Quick ACK in packet receive handler.
+
+Another thought is Tair is using mur_mur_hash2 as hash function. For example it is used for mdb to store its entry in a hash table. It would be better to replace with a hash function optimized for ARM platform. 
+
