@@ -10,6 +10,8 @@ It provides four services: fdb, kdb, ldb and mdb. (In Tair's homepage, it also m
 Basically, Tair system includes three components. Config server, Data Server and Client. 
 
 ![enter image description here](http://cdn1.infoqstatic.com/statics_s2_20161122-0331/resource/articles/taobao-tair/zh/resources/image1.JPG)
+
+
 (Source: [http://www.infoq.com/cn/articles/taobao-tair](http://www.infoq.com/cn/articles/taobao-tair))
 
 **Porting:**
