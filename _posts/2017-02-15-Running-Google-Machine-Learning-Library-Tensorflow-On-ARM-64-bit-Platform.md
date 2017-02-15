@@ -32,7 +32,6 @@ $ wget https://github.com/bazelbuild/bazel/releases/download/0.4.4/bazel-0.4.4-d
 $ mkdir bazel-0.4.4
 $ unzip bazel-0.4.4-dist.zip -d bazel-0.4.4
 $ cd bazel-0.4.4
-
 ``` 
 
 Then modify bazel source file to compatible with aarch64.
@@ -84,6 +83,29 @@ index 9cd2fac..f1cd14c 100755
 @@ -583,6 +583,11 @@ config_setting(
  )
 
+ config_setting(
++    name = "aarch64",
++    values = {"host_cpu": "aarch64"},
++)
++
++config_setting(
+     name = "freebsd",
+     values = {"host_cpu": "freebsd"},
+ )
+diff --git a/tools/cpp/cc_configure.bzl b/tools/cpp/cc_configure.bzl
+index 0ae4483..975908b 100755
+--- a/tools/cpp/cc_configure.bzl
++++ b/tools/cpp/cc_configure.bzl
+@@ -142,8 +142,10 @@ def _get_cpu_value(repository_ctx):
+   result = repository_ctx.execute(["uname", "-m"])
+   if result.stdout.strip() in ["power", "ppc64le", "ppc"]:
+     return "ppc"
+-  if result.stdout.strip() in ["arm", "armv7l", "aarch64"]:
++  if result.stdout.strip() in ["arm", "armv7l"]:
+     return "arm"
++  if result.stdout.strip() in ["aarch64"]:
++    return "aarch64"
+   return "k8" if result.stdout.strip() in ["amd64", "x86_64", "x64"] else "piii"
 ```
 
 Then compile Bazel
