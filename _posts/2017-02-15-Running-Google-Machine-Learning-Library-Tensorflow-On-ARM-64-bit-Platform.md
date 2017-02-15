@@ -7,7 +7,7 @@ TensorFlow is an open source software library for machine learning which was dev
 
 Tensorflow supports x86-64, GPU and ARM 32-bit (Android and Raspberry Pi) platform officially. This article will introduce to install Tensorflow on ARM 64-bit CPU platform. (Of course, Tensorflow also works on ARM 64-bit CPU + GPU platform.) Below work is based on many prior efforts which make Tensorflow running on [Raspberry Pi][1] and [ODROID-C2][2]. And it fixes some issues I met when I follow these guides.
 
-###Build Bazel
+#Build Bazel
 
 Before build Tensorflow, Bazel binary for ARM64 should be built first. Bazel is used to build the majority of Google's software. It is the build tool for Tensorflow.
 
@@ -118,7 +118,7 @@ $ sudo cp output/bazel /usr/local/bin/
 
 Bazel binary is ready for use now.
 
-##Build Tensorflow
+#Build Tensorflow
 
 ```shell
 $ git clone git@github.com:tensorflow/tensorflow.git
@@ -185,7 +185,7 @@ $ sudo pip install /tmp/tensorflow_pkg/tensorflow-1.0.0rc2-cp27-cp27mu-linux_aar
 
 Done!
 
-##Try convolutional model
+#Try convolutional model
 
 Then train machine learning hello world model by using Tensorflow. 
 
