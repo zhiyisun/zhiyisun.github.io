@@ -215,3 +215,8 @@ Validation error: 7.0%
 ```
 
 Have fun!
+
+Reference
+
+ 1. [Building TensorFlow for Raspberry Pi: a Step-By-Step Guide](https://github.com/samjabrahams/tensorflow-on-raspberry-pi)
+ 2. [Installing TensorFlow on ODROID-C2](https://github.com/neo-titans/odroid)
