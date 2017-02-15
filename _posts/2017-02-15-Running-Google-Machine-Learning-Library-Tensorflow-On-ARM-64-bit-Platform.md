@@ -5,7 +5,7 @@ title: Running Google Machine Learning Library Tensorflow On ARM 64-bit Platform
 
 TensorFlow is an open source software library for machine learning which was developed by Google and open source to community. It supports various kinds of fundamental operations for Machine learning. Tensorflow can be deployed on single server or cloud and supports both CPU and GPU devices. It is used for both research and production. It can even be deployed on phones! That makes it unique to other machine learning library, like Theano, Caffe and Torch.
 
-Tensorflow supports x86-64, GPU and ARM 32-bit (Android and Raspberry Pi) platform officially. This article will introduce to install Tensorflow on ARM 64-bit CPU platform. (Of course, Tensorflow also works on ARM 64-bit CPU + GPU platform.) Below work is based on many prior efforts which make Tensorflow running on [Raspberry Pi][1] and [ODROID-C2][2]. And it fixes some issues I met when I follow these guides.
+Tensorflow supports x86-64, GPU and ARM 32-bit (Android and Raspberry Pi) platform officially. This article will introduce to install Tensorflow on ARM 64-bit CPU platform. (Of course, Tensorflow also works on ARM 64-bit CPU + GPU platform.) Below work is based on many prior efforts which make Tensorflow running on [Raspberry Pi](https://github.com/samjabrahams/tensorflow-on-raspberry-pi) and [ODROID-C2](https://github.com/neo-titans/odroid). And it fixes some issues I met when I follow these guides.
 
 #Build Bazel
 
