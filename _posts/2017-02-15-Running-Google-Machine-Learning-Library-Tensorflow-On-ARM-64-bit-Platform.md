@@ -122,27 +122,6 @@ Bazel binary is ready for use now.
 
 ```shell
 $ git clone git@github.com:tensorflow/tensorflow.git
-```
-
-Modify Tensorflow to compatible with aarch64.
-
-```diff
-diff --git a/tensorflow/core/platform/platform.h b/tensorflow/core/platform/platform.h
-index 55d7954..ccebaf3 100644
---- a/tensorflow/core/platform/platform.h
-+++ b/tensorflow/core/platform/platform.h
-@@ -45,7 +45,7 @@ limitations under the License.
-
- // Since there's no macro for the Raspberry Pi, assume we're on a mobile
- // platform if we're compiling for the ARM CPU.
--#define IS_MOBILE_PLATFORM
-+//#define IS_MOBILE_PLATFORM
-
- #else
- // If no platform specified, use:
-```
-
-```shell
 $ ./configure
 Please specify the location of python. [Default is /usr/bin/python]:
 Please specify optimization flags to use during compilation [Default is -march=native]: 
