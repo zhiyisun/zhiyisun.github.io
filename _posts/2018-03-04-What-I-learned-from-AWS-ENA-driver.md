@@ -55,6 +55,8 @@ from: <a href="https://www.teeturtle.com/products/super-lazy">https://www.teetur
 </ul>
 </blockquote>
 <p>ENA setup timer service to check <strong>missing_keep_alive</strong>, <strong>admin_com_state</strong>, <strong>missing_completions</strong>, <strong>empty_rx_ring</strong>, etc. If something goes wrong, ENA driver will reset the device. Reset reasons are defined in <strong>ena_regs_reset_reason_types</strong>.</p>
+<p><img src="https://pan.baidu.com/s/1dEfnTO" alt="enter image description here"><br>
+From <a href="https://www.youtube.com/watch?v=RS5HS41s5YQ">https://www.youtube.com/watch?v=RS5HS41s5YQ</a></p>
 <p>For data path, as shown in above picture, there could be one pare of TX/RX submission queues associated to one vCPU. Each submission queue has a completion queue(CQ) associated with it. The max number of IO queue is 128. But the actual number of IO queue is min of <strong>ena_calc_io_queue_num</strong>, <strong>io_sq_num</strong>, <strong>io_cq_num</strong>, <strong>num_of_onlinecpu</strong>, MSI-X number - 1 (one IRQ for management). This submission queue and completion queue architecture has various benefits. As described in <strong>Kernel/Documentation/networking/ena.txt</strong>:</p>
 <blockquote>
 <ul>
