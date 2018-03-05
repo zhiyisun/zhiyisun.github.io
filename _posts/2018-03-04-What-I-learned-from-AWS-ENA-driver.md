@@ -3,7 +3,7 @@
 
 ---
 
-<p>Haven’t update my blog for quiet a long time!</p>
+<p>Haven’t update my blog for quite a long time!</p>
 <p>I’m not just lazy. I’m super lazy. :-)<br>
 <img src="https://cdn.shopify.com/s/files/1/0267/4223/products/Superlazy-clean_compact.jpg?v=1510686239" alt="https://cdn.shopify.com/s/files/1/0267/4223/products/Superlazy-clean_compact.jpg?v=1510686239"><br>
 from: <a href="https://www.teeturtle.com/products/super-lazy">https://www.teeturtle.com/products/super-lazy</a></p>
