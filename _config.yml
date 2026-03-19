@@ -15,7 +15,7 @@ url: "http://zhiyisun.github.io" # the base hostname & protocol for your site
 
 # Theme settings
 theme: minimal-mistakes-jekyll
-minimal_mistakes_skin: default  # Change to: air, aqua, blush, plum, sun, sea, mint, lava, or dusk
+minimal_mistakes_skin: mint  # Change to: air, aqua, blush, plum, sun, sea, mint, lava, or dusk
 
 # Author settings
 author:
