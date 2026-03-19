@@ -1,0 +1,130 @@
+/* Custom styling for Zhiyi's Blog */
+
+/* Modern gradient header */
+.site-header {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  padding: 2rem 0;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.site-header .site-title {
+  color: white;
+  font-size: 2.5rem;
+  font-weight: 700;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.site-header .page-link {
+  color: white;
+  background: rgba(255, 255, 255, 0.2);
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  transition: all 0.3s ease;
+}
+
+.site-header .page-link:hover {
+  background: rgba(255, 255, 255, 0.3);
+  transform: translateY(-2px);
+}
+
+/* Post cards */
+.post-list > li {
+  background: white;
+  margin: 1.5rem 0;
+  padding: 1.5rem;
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border-left: 4px solid #667eea;
+}
+
+.post-list > li:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.12);
+}
+
+.post-list .post-title {
+  color: #667eea;
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.post-list .post-meta {
+  color: #888;
+  font-size: 0.9rem;
+  background: #f5f5f5;
+  display: inline-block;
+  padding: 0.3rem 0.8rem;
+  border-radius: 20px;
+  margin-bottom: 1rem;
+}
+
+/* Footer */
+.site-footer {
+  background: linear-gradient(135deg, #2c3e50 0%, #3498db 100%);
+  color: white;
+  padding: 2rem 0;
+  margin-top: 3rem;
+}
+
+.site-footer .footer-heading {
+  color: #fff;
+  border-bottom: 2px solid rgba(255, 255, 255, 0.3);
+  padding-bottom: 0.5rem;
+}
+
+.site-footer a {
+  color: #74b9ff;
+}
+
+.site-footer a:hover {
+  color: #0984e3;
+}
+
+/* RSS link */
+.rss-subscribe {
+  background: #ff6b6b;
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  display: inline-block;
+  margin-top: 1rem;
+  transition: background 0.3s ease;
+}
+
+.rss-subscribe:hover {
+  background: #ee5a5a;
+}
+
+/* Page heading */
+.page-heading {
+  color: #667eea;
+  font-size: 2rem;
+  border-bottom: 3px solid #667eea;
+  padding-bottom: 0.5rem;
+  margin-bottom: 2rem;
+}
+
+/* Links */
+a {
+  color: #667eea;
+}
+
+a:hover {
+  color: #764ba2;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  .site-header .site-title {
+    font-size: 1.8rem;
+  }
+  
+  .post-list > li {
+    padding: 1rem;
+  }
+  
+  .post-list .post-title {
+    font-size: 1.2rem;
+  }
+}
