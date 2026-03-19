@@ -29,3 +29,13 @@ author:
 
 # Build settings
 markdown: kramdown
+
+# Exclude spec files and Qwen files
+exclude:
+  - .qwen/
+  - .specify/
+  - specs/
+  - QWEN.md
+  - Gemfile
+  - Gemfile.lock
+  - README.md
