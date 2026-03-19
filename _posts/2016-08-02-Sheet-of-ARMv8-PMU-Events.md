@@ -1,5 +1,5 @@
 ---
-layout: single
+layout: post
 title: Sheet of ARMv8 PMU events
 ---
 

@@ -14,8 +14,7 @@ baseurl: "" # the subpath of your site, e.g. /blog
 url: "http://zhiyisun.github.io" # the base hostname & protocol for your site
 
 # Theme settings
-remote_theme: mmistakes/minimal-mistakes
-minimal_mistakes_skin: dusk  # Change to: air, aqua, blush, plum, sun, sea, mint, lava, or dusk
+theme: minima
 
 # Author settings
 author:
@@ -32,9 +31,6 @@ author:
 
 # Build settings
 markdown: kramdown
-plugins:
-  - jekyll-feed
-  - jekyll-include-cache
 
 # Navigation
 navigation:

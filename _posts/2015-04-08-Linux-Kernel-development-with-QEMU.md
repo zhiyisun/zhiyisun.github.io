@@ -1,5 +1,5 @@
 ---
-layout: single
+layout: post
 Linux kernel development with Qemu
 ---
 

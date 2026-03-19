@@ -1,5 +1,5 @@
 ---
-layout: single
+layout: post
 title: Install Ubuntu 15.10 ARM64 inside of Qemu
 ---
 In previous post, I described how to run ARM64 Linux inside Qemu. But that is stock Linux. In this post, I will describe how to install Ubuntu 15.10 for ARM64 platform inside Qemu. 

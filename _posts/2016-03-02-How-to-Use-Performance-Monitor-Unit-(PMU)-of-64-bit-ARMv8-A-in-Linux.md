@@ -1,5 +1,5 @@
 ---
-layout: single
+layout: post
 title: How to Use Performance Monitor Unit(PMU) of 64-bit ARMv8-A in Linux
 ---
 

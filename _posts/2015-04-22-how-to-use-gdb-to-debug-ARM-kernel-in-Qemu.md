@@ -1,5 +1,5 @@
 ---
-layout: single
+layout: post
 title : How to use gdb to debug ARM kernel in Qemu
 ---
 In host Linux shell, run below command to start gdb first.

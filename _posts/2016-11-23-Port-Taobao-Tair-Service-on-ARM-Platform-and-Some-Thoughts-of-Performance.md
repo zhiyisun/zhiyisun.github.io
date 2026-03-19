@@ -1,5 +1,5 @@
 ---
-layout: single
+layout: post
 title: Port Taobao Tair Service on ARM Server and Some Thoughts on Performance
 ---
 

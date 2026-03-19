@@ -1,5 +1,5 @@
 ---
-layout: single
+layout: post
 title: Build busybox for ARM Qemu
 ---
  - Download busybox
