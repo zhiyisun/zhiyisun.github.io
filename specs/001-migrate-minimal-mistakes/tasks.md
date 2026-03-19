@@ -148,11 +148,11 @@ description: "Task list template for theme migration"
 - [ ] T049 Review _site/ directory for completeness
 - [ ] T050 Remove backup file: _config.yml.backup
 - [ ] T051 Update QWEN.md with migration notes (if needed)
-- [ ] T052 Create commit: `git add . && git commit -m "Migrate to minimal-mistakes theme"`
-- [ ] T053 Push to branch: `git push origin 001-migrate-minimal-mistakes`
+- [x] T052 Create commit: `git add . && git commit -m "Migrate to minimal-mistakes theme"`
+- [x] T053 Push to branch: `git push origin 001-migrate-minimal-mistakes`
 - [ ] T054 Document rollback procedure (in PR or migration notes)
 
-**Note**: All Phase 6 tasks require Ruby for verification except T047 (skin selection), T048 (GA ID), T051, T052, T053, T054 which can be done manually.
+**Note**: T052, T053 completed. Commit 72c7443 pushed to GitHub. Remaining tasks require Ruby for verification or user action (skin selection, GA ID).
 
 ---
 
