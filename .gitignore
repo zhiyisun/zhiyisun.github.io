@@ -3,6 +3,11 @@ _gh_pages
 _site
 .ruby-version
 
+# Ruby/Jekyll specific
+Gemfile.lock
+.bundle/
+vendor/
+
 # Numerous always-ignore extensions
 *.diff
 *.err

@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: single
 title: Good article of debootstrap vs buildroot
 ---
 I am selecting root filesystem for my Qemu environment. And I found this article is very useful. 

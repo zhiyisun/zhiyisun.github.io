@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: single
 title: Run X-Gene image and rootfs inside of Qemu
 ---
 It is inefficient to control the X-Gene board remotely. But fortunately, X-Gene provides Linux source code and root filesystem. I spent some time to make it work with Qemu. 

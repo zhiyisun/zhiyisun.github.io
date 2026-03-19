@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: single
 title: Running Google Machine Learning Library Tensorflow On ARM 64-bit Platform
 ---
 

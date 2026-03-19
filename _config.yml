@@ -9,13 +9,46 @@
 title: Zhiyi's Blog
 email: zhiyisun@gmail.com
 description: > # this means to ignore newlines until "baseurl:"
-        I am Zhiyi Sun. I like Open Source Software(OSS), especially Linux. I am also a big fan of electronics gadgets. I listen 评弹 sometimes.
+  I am Zhiyi Sun. I like Open Source Software(OSS), especially Linux. I am also a big fan of electronics gadgets. I listen 评弹 sometimes.
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "http://zhiyisun.github.io" # the base hostname & protocol for your site
-twitter_username: zhiyisun 
-github_username: zhiyisun 
-googleplus_username: 112990371546622291108
+
+# Theme settings
+theme: minimal-mistakes-jekyll
+minimal_mistakes_skin: default  # Change to: air, aqua, blush, plum, sun, sea, mint, lava, or dusk
+
+# Author settings
+author:
+  name: Zhiyi Sun
+  links:
+    - type: twitter
+      url: https://twitter.com/zhiyisun
+    - type: github
+      url: https://github.com/zhiyisun
+
+# Google Analytics (optional - add your tracking ID)
+# google_analytics_id: UA-XXXXX-X  # Universal Analytics
+# google_analytics_id: G-XXXXXXXXXX  # Google Analytics 4
 
 # Build settings
 markdown: kramdown
 
+# Navigation
+navigation:
+  - title: Home
+    url: /
+  - title: About
+    url: /about/
+
+# Posts defaults
+defaults:
+  - scope:
+      path: ""
+      type: posts
+    values:
+      layout: single
+      author_profile: true
+      read_time: false
+      comments: false
+      share: true
+      related: false

@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: single
 title: Builtin Atomic Operation in GCC on Different ARM Arch Platform
 ---
 

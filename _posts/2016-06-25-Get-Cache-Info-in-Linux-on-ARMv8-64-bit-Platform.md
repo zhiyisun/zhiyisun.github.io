@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: single
 title: Get Cache Info in Linux on ARMv8 64-bit Platform
 ---
 

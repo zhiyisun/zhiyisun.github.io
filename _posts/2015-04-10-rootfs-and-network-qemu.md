@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: single
 title : RootFS and Network of Qemu
 ---
 After a few days struggling with rootfs, I tend to use the simplest way -- busybox. I got some fails when compiling the buildroot source code.  For debugging network code, I think busybox is enough. I don't want to waste time on building a filesystem.
