@@ -1,6 +1,5 @@
 source "https://rubygems.org"
 
-gem "minimal-mistakes-jekyll"
-gem "jekyll"
-gem "kramdown"
+gem "github-pages"
 gem "jekyll-feed"
+gem "jekyll-remote-theme"
