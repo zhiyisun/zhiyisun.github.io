@@ -32,6 +32,9 @@ author:
 
 # Build settings
 markdown: kramdown
+plugins:
+  - jekyll-feed
+  - jekyll-include-cache
 
 # Navigation
 navigation:
